@@ -1,5 +1,7 @@
 # crs-lint
 
+<img alt="EasyxLab tool" src="https://raw.githubusercontent.com/easybytehub/crs-lint/main/.github/badge-tool.svg">
+
 Offline linter for **OECD Common Reporting Standard XML** files — schema **v2.0** and
 schema **v3.0** (CRS 2.0, used for exchanges from 1 January 2027). It checks the file
 against the official XSD and, above all, against the **business rules** that today you
@@ -158,5 +160,9 @@ CRS message never needs one). Test fixtures are synthetic.
 crs-lint is Apache-2.0. The bundled XSDs are © OECD, reproduced unmodified as
 published by IRAS and subject to the OECD Terms and Conditions; they are bundled so the
 tool works offline (see `NOTICE` and `src/crs_lint/esquemas/README.md`). Hence the
-package licence expression `Apache-2.0 AND LicenseRef-OECD`. Made by EasyByte Lab, EasyByte Hub S. Coop.
+package licence expression `Apache-2.0 AND LicenseRef-OECD`. Made by EasyxLab, the research lab of EasyByte Hub S. Coop.
 Mad. (Spain).
+
+---
+
+EasyxLab · a research lab by [EasyByte](https://easybyte.es)
