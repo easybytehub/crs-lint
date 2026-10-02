@@ -404,7 +404,7 @@ def genera(destino: Path = DESTINO) -> dict[str, list[str]]:
         _escribe(destino / f"{nombre}.xml", raiz)
         esperados[f"{nombre}.xml"] = sorted(reglas)
     (destino / "expected.json").write_text(
-        json.dumps(esperados, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+        json.dumps(esperados, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n"
     )
     return esperados
 
