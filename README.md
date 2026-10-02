@@ -126,13 +126,13 @@ permissions:
   security-events: write   # upload-sarif needs it
 
 # …in the job's steps:
-- uses: easybytehub/crs-lint@<commit-sha>  # pin a commit
+- uses: easybytehub/crs-lint@4c8ac3beb6fd1eedd59b20e3f8d3e982bf300ed7  # v0.1.0
   with:
     files: |
       out/crs/*.xml
     schema-version: "3.0"
     fail: "false"            # keep going so the SARIF gets uploaded
-- uses: github/codeql-action/upload-sarif@<commit-sha>
+- uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2  # v4.38.2
   if: always()
   with:
     sarif_file: crs-lint.sarif
