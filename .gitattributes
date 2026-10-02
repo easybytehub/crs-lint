@@ -1,2 +1,4 @@
 # OECD schemas are redistributed byte-for-byte (see NOTICE): never normalise line endings
 src/crs_lint/esquemas/** -text
+# fixtures are compared byte-for-byte with what the generator writes: keep LF on every OS
+tests/fixtures/** -text

@@ -80,15 +80,31 @@ class Documento:
     """La versión que dice el espacio de nombres de la raíz."""
 
 
-def _parser() -> etree.XMLParser:
+def _parser(*, huge_tree: bool = False) -> etree.XMLParser:
     return etree.XMLParser(
         resolve_entities=False,
         no_network=True,
         load_dtd=False,
         dtd_validation=False,
-        huge_tree=False,
+        huge_tree=huge_tree,
         remove_comments=False,
     )
+
+
+def _fallo_por_limite(crudo: bytes) -> bool:
+    """¿El fallo de parseo era nuestro límite de tamaño y no un XML mal formado?
+
+    libxml2 no lo informa igual en todas las plataformas: en el CI de Windows, lxml no devolvía
+    ERR_RESOURCE_LIMIT ni mencionaba XML_PARSE_HUGE para un nodo de texto de más de 10 MB, y
+    el fichero acababa como 50007. En vez de adivinar mensajes, se reintenta SOLO para
+    clasificar, quitando únicamente los límites de tamaño: las entidades, la red y la DTD
+    siguen desactivadas, y el DOCTYPE ya se ha rechazado antes, así que no abre ningún vector.
+    """
+    try:
+        etree.fromstring(crudo, parser=_parser(huge_tree=True))
+    except etree.XMLSyntaxError:
+        return False
+    return True
 
 
 def _rechaza_doctype(crudo: bytes) -> None:
@@ -118,7 +134,11 @@ def lee(ruta: Path) -> Documento:
         linea = exc.lineno or 0
         mensaje = str(exc.msg or exc).splitlines()[0]
         codigo = cast(Any, exc).code  # lxml-stubs no declara `code`
-        if codigo == etree.ErrorTypes.ERR_RESOURCE_LIMIT or "XML_PARSE_HUGE" in mensaje:
+        if (
+            codigo == etree.ErrorTypes.ERR_RESOURCE_LIMIT
+            or "XML_PARSE_HUGE" in mensaje
+            or _fallo_por_limite(crudo)
+        ):
             raise LimiteDeRecursos(mensaje, linea) from None
         raise MalFormado(mensaje, linea) from None
     # Segunda red: un DOCTYPE detrás de un comentario de más de 8 KiB no lo ve el
