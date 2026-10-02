@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "crs-lint"
+description = "Offline CI linter for OECD Common Reporting Standard XML (schema v2.0 and v3.0 / CRS 2.0): XSD plus the business rules of the CRS Status Message, citing the official OECD error code for every finding. Read-only."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0 AND LicenseRef-OECD"
+# Los XSD de la OCDE van dentro de la rueda (la herramienta promete funcionar sin red) y
+# no son Apache: se rigen por los términos de la OCDE. NOTICE lo dice fichero a fichero.
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "EasyByte Hub, S. Coop. Mad." }]
+keywords = ["crs", "oecd", "aeoi", "dac2", "dac8", "common-reporting-standard", "xml", "xsd", "linter"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Topic :: Software Development :: Quality Assurance",
+  "Typing :: Typed",
+]
+dynamic = ["version"]
+
+# **Una sola dependencia, y es a propósito.** Validar contra un XSD es implementar XML
+# Schema 1.0 (tipos, facetas, enumeraciones, imports entre cinco ficheros): escribirlo a
+# mano sería inventarse un validador en una herramienta cuyo valor es que se puede creer
+# lo que dice. lxml es libxml2, el validador de referencia en casi todo el ecosistema, y
+# tiene ruedas para Linux, macOS y Windows en todas las versiones soportadas. Se usa con
+# la red y las entidades desactivadas (ver documento.py).
+dependencies = ["lxml>=5.3"]
+
+[project.optional-dependencies]
+dev = [
+  # Fijadas: una versión nueva de ruff o mypy con una regla nueva no puede poner en rojo
+  # un commit que no ha cambiado nada.
+  "mypy==2.4.0",
+  "pytest>=8.3",
+  "ruff==0.16.10",
+  "lxml-stubs>=0.5",
+  # Sólo para validar action.yml en tests; el paquete no depende de YAML.
+  "PyYAML>=6.0",
+  "types-PyYAML>=6.0",
+]
+
+[project.scripts]
+crs-lint = "crs_lint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/easybytehub/crs-lint"
+Source = "https://github.com/easybytehub/crs-lint"
+Issues = "https://github.com/easybytehub/crs-lint/issues"
+
+[tool.hatch.version]
+path = "src/crs_lint/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/crs_lint"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Un aviso que nadie lee es un defecto que nadie arregla.
+filterwarnings = ["error"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "S", "UP", "RUF"]
+# Las reglas citan literalmente a la OCDE, que escribe «OECD601 – IBAN» con raya: el
+# carácter es parte de la cita, no un error tipográfico.
+ignore = ["RUF001", "RUF002", "RUF003"]
+# El generador de fixtures escribe plantillas XML: partir sus líneas cambiaría el XML.
+per-file-ignores = { "tests/*" = ["S101", "S603"], "scripts/*" = ["S101", "S603", "S607", "E501"] }
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]

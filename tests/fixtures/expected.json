@@ -1,0 +1,138 @@
+{
+  "50007-schema.xml": [
+    "OECD-50007"
+  ],
+  "50008-messagerefid.xml": [
+    "OECD-50008"
+  ],
+  "50009-same-messagerefid.xml": [],
+  "50010-50011-test-and-live.xml": [
+    "OECD-50010-50011"
+  ],
+  "50010-test-data.xml": [
+    "OECD-50010"
+  ],
+  "60000-iban-print-format.xml": [
+    "OECD-60000"
+  ],
+  "60000-iban.xml": [
+    "OECD-60000"
+  ],
+  "60001-isin.xml": [
+    "OECD-60001"
+  ],
+  "60002-negative-balance.xml": [
+    "OECD-60002"
+  ],
+  "60003-closed-with-balance.xml": [
+    "OECD-60003"
+  ],
+  "60004-name-type.xml": [
+    "OECD-60004"
+  ],
+  "60005-cp-must-be-omitted.xml": [
+    "OECD-60005"
+  ],
+  "60006-cp-must-be-provided.xml": [
+    "OECD-60006"
+  ],
+  "60007-reporting-group.xml": [
+    "OECD-60007"
+  ],
+  "60008-sponsor.xml": [
+    "OECD-60008"
+  ],
+  "60009-intermediary.xml": [
+    "OECD-60009"
+  ],
+  "60010-pool-report.xml": [
+    "OECD-60010"
+  ],
+  "60011-person-rescountry.xml": [
+    "OECD-60011"
+  ],
+  "60012-organisation-rescountry.xml": [
+    "OECD-60012"
+  ],
+  "60013-fi-rescountry.xml": [
+    "OECD-60013"
+  ],
+  "60014-birthdate.xml": [
+    "OECD-60014"
+  ],
+  "60015-no-account-report.xml": [
+    "OECD-60015"
+  ],
+  "60016-individual-with-cp.xml": [
+    "OECD-60016"
+  ],
+  "60017-emoney-not-depository.xml": [
+    "OECD-60017"
+  ],
+  "60018-iban-not-depository.xml": [
+    "OECD-60018"
+  ],
+  "60019-equity-interest-type.xml": [
+    "OECD-60019"
+  ],
+  "60020-insurance-account-number.xml": [
+    "OECD-60020"
+  ],
+  "60021-depository-payment.xml": [
+    "OECD-60021"
+  ],
+  "60022-investment-entity-payment.xml": [
+    "OECD-60022"
+  ],
+  "60023-insurance-payment.xml": [
+    "OECD-60023"
+  ],
+  "80000-docrefid-twice.xml": [
+    "OECD-80000"
+  ],
+  "80001-docrefid-format.xml": [
+    "OECD-80001"
+  ],
+  "80004-corrdocrefid-on-new-data.xml": [
+    "OECD-80004"
+  ],
+  "80005-missing-corrdocrefid.xml": [
+    "OECD-80005"
+  ],
+  "80006-docspec-corrmessagerefid.xml": [
+    "OECD-80006"
+  ],
+  "80007-messagespec-corrmessagerefid.xml": [
+    "OECD-80007"
+  ],
+  "80008-resend-account-report.xml": [
+    "OECD-80008"
+  ],
+  "80009-delete-fi-not-accounts.xml": [
+    "OECD-80009"
+  ],
+  "80010-new-and-corrected.xml": [
+    "OECD-80010"
+  ],
+  "80011-corrected-twice.xml": [
+    "OECD-80011"
+  ],
+  "80015-no-crsbody.xml": [
+    "OECD-80015"
+  ],
+  "ug-timestamp-fraction.xml": [
+    "UG-TIMESTAMP"
+  ],
+  "ug-version-attribute.xml": [
+    "UG-VERSION"
+  ],
+  "v2-60000-iban.xml": [
+    "OECD-60000"
+  ],
+  "v2-60021-not-in-v2.xml": [],
+  "valid-2.0.xml": [],
+  "valid-3.0.xml": [],
+  "valid-domestic-3.0.xml": [
+    "CTX-DOMESTIC"
+  ]
+}

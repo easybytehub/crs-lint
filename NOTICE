@@ -1,0 +1,18 @@
+crs-lint
+Copyright 2026 EasyByte Hub, S. Coop. Mad.
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE), except
+for the files listed below.
+
+src/crs_lint/esquemas/2.0/*.xsd and src/crs_lint/esquemas/3.0/*.xsd
+
+  © OECD. XML schemas reproduced unmodified as published by IRAS (Inland Revenue
+  Authority of Singapore, "CRS Filing" page); subject to the OECD Terms and Conditions
+  (https://www.oecd.org/termsandconditions). They are not covered by the Apache License.
+  They are bundled so that crs-lint works offline; their checksums and download URLs are
+  in src/crs_lint/esquemas/README.md.
+
+The rule texts quoted in the source code and in SPEC.md are short, attributed quotations
+from OECD publications: the CRS Status Message XML Schema User Guide (Version 3.0, 2025),
+licensed CC BY 4.0, and the CRS XML Schema User Guides (2019 and 2024) and the CRS Status
+Message User Guide (Version 2.0, 2019), governed by the OECD Terms and Conditions.

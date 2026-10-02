@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<crs:CRS_OECD xmlns:crs="urn:oecd:ties:crs:v2" xmlns:stf="urn:oecd:ties:crsstf:v5" xmlns:cfc="urn:oecd:ties:commontypesfatcacrs:v2" xmlns:ftc="urn:oecd:ties:fatca:v1" version="2.0">
+  <crs:MessageSpec>
+    <crs:TransmittingCountry>ES</crs:TransmittingCountry>
+    <crs:ReceivingCountry>DE</crs:ReceivingCountry>
+    <crs:MessageType>CRS</crs:MessageType>
+    <crs:MessageRefId>ES2025DE0000000001</crs:MessageRefId>
+    <crs:MessageTypeIndic>CRS701</crs:MessageTypeIndic>
+    <crs:ReportingPeriod>2025-12-31</crs:ReportingPeriod>
+    <crs:Timestamp>2026-03-15T09:45:30.789</crs:Timestamp>
+  </crs:MessageSpec>
+  <crs:CrsBody>
+    <crs:ReportingFI>
+      <crs:ResCountryCode>ES</crs:ResCountryCode>
+      <crs:IN issuedBy="ES">A00000000</crs:IN>
+      <crs:Name>Example Bank, S.A.</crs:Name>
+      <crs:Address>
+        <cfc:CountryCode>ES</cfc:CountryCode>
+        <cfc:AddressFree>Example street 3, Madrid</cfc:AddressFree>
+      </crs:Address>
+      <crs:DocSpec>
+        <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+        <stf:DocRefId>ESFI20250001</stf:DocRefId>
+      </crs:DocSpec>
+    </crs:ReportingFI>
+    <crs:ReportingGroup>
+      <crs:AccountReport>
+        <crs:DocSpec>
+          <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+          <stf:DocRefId>ESAR20250001</stf:DocRefId>
+        </crs:DocSpec>
+        <crs:AccountNumber AcctNumberType="OECD601">DE89370400440532013000</crs:AccountNumber>
+        <crs:AccountHolder>
+          <crs:Individual>
+            <crs:ResCountryCode>DE</crs:ResCountryCode>
+            <crs:TIN issuedBy="DE">00000000000</crs:TIN>
+            <crs:Name>
+              <crs:FirstName>Erika</crs:FirstName>
+              <crs:LastName>Mustermann</crs:LastName>
+            </crs:Name>
+            <crs:Address>
+              <cfc:CountryCode>DE</cfc:CountryCode>
+              <cfc:AddressFree>Example street 1, Example city</cfc:AddressFree>
+            </crs:Address>
+            <crs:BirthInfo>
+              <crs:BirthDate>1980-05-17</crs:BirthDate>
+            </crs:BirthInfo>
+          </crs:Individual>
+        </crs:AccountHolder>
+        <crs:AccountBalance currCode="EUR">1500.00</crs:AccountBalance>
+        <crs:Payment>
+          <crs:Type>CRS502</crs:Type>
+          <crs:PaymentAmnt currCode="EUR">12.50</crs:PaymentAmnt>
+        </crs:Payment>
+      </crs:AccountReport>
+      <crs:AccountReport>
+        <crs:DocSpec>
+          <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+          <stf:DocRefId>ESAR20250002</stf:DocRefId>
+        </crs:DocSpec>
+        <crs:AccountNumber AcctNumberType="OECD605">POL-0001</crs:AccountNumber>
+        <crs:AccountHolder>
+          <crs:Organisation>
+            <crs:ResCountryCode>DE</crs:ResCountryCode>
+            <crs:Name>Beispiel Holding GmbH</crs:Name>
+            <crs:Address>
+              <cfc:CountryCode>DE</cfc:CountryCode>
+              <cfc:AddressFree>Example street 2, Example city</cfc:AddressFree>
+            </crs:Address>
+          </crs:Organisation>
+          <crs:AcctHolderType>CRS101</crs:AcctHolderType>
+        </crs:AccountHolder>
+        <crs:ControllingPerson>
+          <crs:Individual>
+            <crs:ResCountryCode>DE</crs:ResCountryCode>
+            <crs:TIN issuedBy="DE">00000000000</crs:TIN>
+            <crs:Name>
+              <crs:FirstName>Max</crs:FirstName>
+              <crs:LastName>Mustermann</crs:LastName>
+            </crs:Name>
+            <crs:Address>
+              <cfc:CountryCode>DE</cfc:CountryCode>
+              <cfc:AddressFree>Example street 1, Example city</cfc:AddressFree>
+            </crs:Address>
+            <crs:BirthInfo>
+              <crs:BirthDate>1975-01-02</crs:BirthDate>
+            </crs:BirthInfo>
+          </crs:Individual>
+          <crs:CtrlgPersonType>CRS801</crs:CtrlgPersonType>
+        </crs:ControllingPerson>
+        <crs:AccountBalance currCode="EUR">25000.00</crs:AccountBalance>
+        <crs:Payment>
+          <crs:Type>CRS504</crs:Type>
+          <crs:PaymentAmnt currCode="EUR">12.50</crs:PaymentAmnt>
+        </crs:Payment>
+      </crs:AccountReport>
+      <crs:AccountReport>
+        <crs:DocSpec>
+          <stf:DocTypeIndic>OECD1</stf:DocTypeIndic>
+          <stf:DocRefId>ESAR20250003</stf:DocRefId>
+        </crs:DocSpec>
+        <crs:AccountNumber AcctNumberType="OECD603">US0378331005</crs:AccountNumber>
+        <crs:AccountHolder>
+          <crs:Individual>
+            <crs:ResCountryCode>DE</crs:ResCountryCode>
+            <crs:TIN issuedBy="DE">00000000000</crs:TIN>
+            <crs:Name>
+              <crs:FirstName>Erika</crs:FirstName>
+              <crs:LastName>Mustermann</crs:LastName>
+            </crs:Name>
+            <crs:Address>
+              <cfc:CountryCode>DE</cfc:CountryCode>
+              <cfc:AddressFree>Example street 1, Example city</cfc:AddressFree>
+            </crs:Address>
+            <crs:BirthInfo>
+              <crs:BirthDate>1980-05-17</crs:BirthDate>
+            </crs:BirthInfo>
+          </crs:Individual>
+        </crs:AccountHolder>
+        <crs:AccountBalance currCode="EUR">3000.00</crs:AccountBalance>
+        <crs:Payment>
+          <crs:Type>CRS503</crs:Type>
+          <crs:PaymentAmnt currCode="EUR">12.50</crs:PaymentAmnt>
+        </crs:Payment>
+      </crs:AccountReport>
+    </crs:ReportingGroup>
+  </crs:CrsBody>
+</crs:CRS_OECD>

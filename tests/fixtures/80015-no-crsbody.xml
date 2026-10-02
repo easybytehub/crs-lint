@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<crs:CRS_OECD xmlns:crs="urn:oecd:ties:crs:v3" xmlns:stf="urn:oecd:ties:crsstf:v5" xmlns:cfc="urn:oecd:ties:commontypesfatcacrs:v2" xmlns:ftc="urn:oecd:ties:fatca:v1" version="3.0">
+  <crs:MessageSpec>
+    <crs:TransmittingCountry>ES</crs:TransmittingCountry>
+    <crs:ReceivingCountry>DE</crs:ReceivingCountry>
+    <crs:MessageType>CRS</crs:MessageType>
+    <crs:MessageRefId>ES2026DE0000000001</crs:MessageRefId>
+    <crs:MessageTypeIndic>CRS701</crs:MessageTypeIndic>
+    <crs:ReportingPeriod>2026-12-31</crs:ReportingPeriod>
+    <crs:Timestamp>2027-03-15T09:45:30.789</crs:Timestamp>
+  </crs:MessageSpec>
+</crs:CRS_OECD>
