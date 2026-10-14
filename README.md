@@ -65,7 +65,7 @@ cannot.
   `Timestamp` milliseconds format.
 
 The full list, with the literal OECD text and page of each rule, is in
-[SPEC.md](SPEC.md).
+[SPEC.md](https://github.com/easybytehub/crs-lint/blob/main/SPEC.md).
 
 ## What it does not check
 
@@ -165,4 +165,4 @@ Mad. (Spain).
 
 ---
 
-EasyxLab · a research lab by [EasyByte](https://easybyte.es)
+[EasyxLab](https://easybyte.es/lab/) · a research lab by [EasyByte](https://easybyte.es)
