@@ -1,6 +1,14 @@
 # Changelog
 
-## 0.1.0 — unreleased
+## 0.1.1 — unreleased
+
+First release on PyPI. No functional changes.
+
+- README: absolute links, so they also work on PyPI; the footer links to EasyxLab.
+- CI still runs the GitHub Action on the fixtures, but no longer uploads their SARIF to
+  code scanning: those files break the rules on purpose.
+
+## 0.1.0 — 2026-10-02
 
 First version. Includes the fixes of the adversarial review of 2026-10-02:
 
