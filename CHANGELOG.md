@@ -1,10 +1,11 @@
 # Changelog
 
-## 0.1.1 — unreleased
+## 0.1.1 — 2026-10-29
 
 First release on PyPI. No functional changes.
 
-- README: absolute links, so they also work on PyPI; the footer links to EasyxLab.
+- README: installs with `pip install crs-lint`; absolute links, so they also work on PyPI;
+  the footer links to EasyxLab.
 - CI still runs the GitHub Action on the fixtures, but no longer uploads their SARIF to
   code scanning: those files break the rules on purpose. It checks instead that the
   SARIF is version 2.1.0 and has findings.

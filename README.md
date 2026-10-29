@@ -82,11 +82,11 @@ these rules found nothing.
 
 ## Install and use
 
-`pip install crs-lint` will work once the package is published on PyPI. Until then,
-install the wheel attached to a GitHub release, or from source:
+The wheel is also attached to each GitHub release, or install from source with
+`pip install git+https://github.com/easybytehub/crs-lint`.
 
 ```bash
-pip install git+https://github.com/easybytehub/crs-lint
+pip install crs-lint
 crs-lint reports/*.xml
 crs-lint report.xml --schema-version 3.0 --format sarif > crs-lint.sarif
 ```
